@@ -61,6 +61,9 @@ public class JFrameCursos extends JFrame {
         buscarCursobtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                BuscarCursos buscarCursos = context.getBean(BuscarCursos.class);
+                buscarCursos.setVisible(true);
+                setVisible(false);
             }
         });
     }

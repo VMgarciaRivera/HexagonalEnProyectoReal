@@ -13,4 +13,6 @@ public interface RepositorioDeCursos {
     Curso guardar(Curso curso);
     Optional<Curso> buscarPorId(Integer id);
     List<Curso> listar();
+    void actualizarCurso(Curso curso);
+    void eliminar(Integer id);
 }

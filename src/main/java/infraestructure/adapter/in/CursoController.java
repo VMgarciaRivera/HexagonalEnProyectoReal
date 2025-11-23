@@ -6,6 +6,7 @@ import domain.valueobjects.curso.Aula;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -64,6 +65,21 @@ public class CursoController {
         }
 
         return cursoUseCases.buscarCursoPorId(Id);
+    }
+
+    public List<Curso> listarCursos() {
+        return cursoUseCases.listarCursos();
+    }
+
+    public void editarCurso(Curso curso) {
+        cursoUseCases.actualizarCurso(curso);
+    }
+
+    public void eliminarCurso(Integer id) {
+        if (id == null || id < 0) {
+            throw new IllegalArgumentException("El ID del curso no puede estar vacío");
+        }
+        cursoUseCases.eliminarCurso(id);
     }
 
 }
